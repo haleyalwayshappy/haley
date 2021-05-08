@@ -122,11 +122,11 @@ function addClass(element, name) {
 
 function removeClass(element, name) {
   var arr;
-  arr = element.className.split("");
+  arr = element.className.split(" ");
   while (arr.indexOf(name) > -1) {
     arr.splice(arr.indexOf(name), 1);
   }
-  element.className = arr.join("");
+  element.className = arr.join(" ");
 }
 
 document.getElementById('all').addEventListener('click', filterSelection.bind(null, 'all'));
@@ -135,35 +135,67 @@ document.getElementById('flutter').addEventListener('click', filterSelection.bin
 document.getElementById('web').addEventListener('click', filterSelection.bind(null, 'web'));
 document.getElementById('music').addEventListener('click', filterSelection.bind(null, 'music'));
 
+
 function viewPortfolio(event) {
   var polyNode = event.target;
-
   if (polyNode.tagName.toLowerCase() == 'i') {
     polyNode = polyNode.parentNode;
   }
 
   var overlayNode = polyNode;
-  var videoNode = overlayNode.nextElementSibling;
-
   var itemNode = overlayNode.parentNode;
-  var mainNode = itemNode.nextElementSibling;
+  var videoNode = itemNode.nextElementSibling;
+  var mainNode = videoNode.nextElementSibling;
   var subNode = mainNode.nextElementSibling;
   var textNode = subNode.nextElementSibling;
 
-  document.getElementById('modalVideo').src = videoNode.src;
+// 동영상이 있을때는 모달 페이지에 동영상이 들어가고 동영상이 없으면 이미지만 출력되게 하는 코드를 작성해야함 
+
+
+  document.getElementById('modalVideo').innerHTML= videoNode.innerHTML;
   document.getElementById('modalMain').innerHTML = mainNode.innerHTML;
   document.getElementById('modalSub').innerHTML = subNode.innerHTML;
   document.getElementById('modalText').innerHTML = textNode.innerHTML;
-
- document.getElementById('portfolioModal').style.display='block';
-
-
- $('#modalClose').on('click', function(){ //레이어 닫을때
-  $('#portfolioModal').hide();
-  $('#modalMain').empty();  
-});
+ 
+ 
+  document.getElementById('portfolioModal').style.display = 'block';
 
 }
+$('#modalClose').on('click', function(){ //레이어 닫을때
+    $('#portfolioModal').hide();
+    $('#modalVideo').empty();  
+});
+
+
+// function viewPortfolio(event) {
+//   var polyNode = event.target;
+
+//   if (polyNode.tagName.toLowerCase() == 'i') {
+//     polyNode = polyNode.parentNode;
+//   }
+
+//   var overlayNode = polyNode;
+//   var videoNode = overlayNode.nextElementSibling;
+
+//   var itemNode = overlayNode.parentNode;
+//   var mainNode = itemNode.nextElementSibling;
+//   var subNode = mainNode.nextElementSibling;
+//   var textNode = subNode.nextElementSibling;
+
+//   document.getElementById('modalVideo').src = videoNode.src;
+//   document.getElementById('modalMain').innerHTML = mainNode.innerHTML;
+//   document.getElementById('modalSub').innerHTML = subNode.innerHTML;
+//   document.getElementById('modalText').innerHTML = textNode.innerHTML;
+
+//  document.getElementById('portfolioModal').style.display='block';
+// console.log(overlayNode);
+
+//  $('#modalClose').on('click', function(){ //레이어 닫을때
+//   $('#portfolioModal').hide();
+//   $('#modalVideo').empty();  
+// });
+
+// }
 
 
 var filterItems = document.getElementsByClassName('overlay');
@@ -174,18 +206,18 @@ for (var i = 0; i < filterItems.length; i++) {
 
 
 /*NAVBAR ANCHOR */
-function moveTo(id){
-  if(id=='brand'){
-    window.scrollTo(0,0);
-  }else{
-    window.scrollTo(0,document.getElementById(id).offsetTop-70);
+function moveTo(id) {
+  if (id == 'brand') {
+    window.scrollTo(0, 0);
+  } else {
+    window.scrollTo(0, document.getElementById(id).offsetTop - 70);
   }
   document.getElementById('menu').classList.remove('show');
 
 }
 
-document.getElementById('navbarBrand').addEventListener('click',moveTo.bind(null,'brand'));
-document.getElementById('navbarAbout').addEventListener('click',moveTo.bind(null,'about'));
-document.getElementById('navbarService').addEventListener('click',moveTo.bind(null,'service'));
-document.getElementById('navbarPortfolio').addEventListener('click',moveTo.bind(null,'portfolio'));
-document.getElementById('navbarContact').addEventListener('click',moveTo.bind(null,'contact'));
+document.getElementById('navbarBrand').addEventListener('click', moveTo.bind(null, 'brand'));
+document.getElementById('navbarAbout').addEventListener('click', moveTo.bind(null, 'about'));
+document.getElementById('navbarService').addEventListener('click', moveTo.bind(null, 'service'));
+document.getElementById('navbarPortfolio').addEventListener('click', moveTo.bind(null, 'portfolio'));
+document.getElementById('navbarContact').addEventListener('click', moveTo.bind(null, 'contact'));
