@@ -216,6 +216,7 @@ function moveTo(id) {
 
 }
 
+
 document.getElementById('navbarBrand').addEventListener('click', moveTo.bind(null, 'brand'));
 document.getElementById('navbarAbout').addEventListener('click', moveTo.bind(null, 'about'));
 document.getElementById('navbarService').addEventListener('click', moveTo.bind(null, 'service'));

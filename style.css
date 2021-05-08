@@ -197,7 +197,8 @@ ul {
 
 /* WELCOME AREA */
 .welcome-area {
-  padding: 100px 0 0 0;
+  padding-top: 8px;
+  padding-bottom: 100px;
   height: auto;
 }
 
@@ -285,7 +286,7 @@ ul {
   }
 }
 
-/* about area */
+
 /* section */
 section {
   padding: 100px 0;
@@ -457,6 +458,7 @@ margin-right: 10px;
 .services-area>.container>.item>.icon>span>i {
   font-size: 64px;
   color: rgb(90, 90, 90);
+  padding-right: 8px;
 }
 
 .services-area>.container>.item>.service {
@@ -681,11 +683,11 @@ margin-right: 10px;
 
 }
 
-.contact-area>.container>.item>.icon>span>i {
+.contact-area>.container>.item>.icon>a>i {
   font-size: 64px;
   color:#333;
 }
-.contact-area>.container>.item>.icon>span>i:hover {
+.contact-area>.container>.item>.icon>a>i:hover {
   font-size: 64px;
   color:white;
 }
