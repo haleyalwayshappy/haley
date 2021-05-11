@@ -7,7 +7,7 @@ font-family: 'Roboto Mono', monospace;
 * {
   margin: 0;
   padding: 0;
-  font-size: 0;
+  font-size: 0px;
 }
 
 body {
@@ -293,11 +293,17 @@ section {
 }
 
 .title {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
   letter-spacing: 3px;
   padding-bottom: 80px;
+}
+
+@media (min-width: 992px) {
+  .title {
+    font-size: 60px;
+  }
 }
 
 .title::after {
@@ -395,8 +401,8 @@ section {
 
 .about-area>.text>ul>li>.info>i {
   color: rgb(252, 179, 45);
-font-size: 24px;
-margin-right: 10px;
+  font-size: 24px;
+  margin-right: 10px;
 }
 
 .about-area>.text>.sns {
@@ -429,50 +435,57 @@ margin-right: 10px;
 /* SERVICES AREA */
 .services-area {
   height: auto;
-  background-color: #f9f9ff;
+  /* background-color: yellow; */
 }
 
 .services-area>.container {
+  padding: 8px 20px;
+  /* background-color: orange; */
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+
 }
 
 .services-area>.container>.item {
+  width: 100px;
   height: auto;
-  background-color: white;
-  padding: 20px;
-  margin: 20px;
-  text-align: left;
+  padding: 10px;
+  margin: 8px;
+  text-align: center;
   transition: all 0.5s ease;
 }
 
-.services-area>.container>.item:hover {
-  transform: scale(1.015);
-  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-}
 
-.services-area>.container>.item>.icon {
-  padding: 10px 0;
-  display: inline-block;
-}
-
-.services-area>.container>.item>.icon>span>i {
-  font-size: 64px;
-  color: rgb(90, 90, 90);
-  padding-right: 8px;
+@media (min-width: 992px) {
+  .services-area>.container>.item>.service {
+    font-size: 1.2vw;
+    font-weight: bold;
+    margin-top: 8px;
+    padding-top: 10px;
+    display: block;
+  }
+  .services-area>.container>.item {
+    width: 100px;
+    height: auto;
+    padding: 30px;
+    margin: 8px;
+    text-align: center;
+    transition: all 0.5s ease;
+  }
+  
 }
 
 .services-area>.container>.item>.service {
-  font-size: 32px;
+  display: block;
   font-weight: bold;
-  padding: 10px 0;
+  margin-top: 8px;
+  padding-top: 10px;
+  text-transform: uppercase;
 }
 
-.services-area>.container>.item>.content {
-  font-size: 16px;
-  font-family: "Noto Sans KR", sans-serif;
-  letter-spacing: 1.5px;
-  padding: 10px 0;
-}
 
 /* PORTFOLIO AREA */
 
@@ -623,7 +636,7 @@ margin-right: 10px;
 
 @media (min-width: 992px) {
   #portfolioModal>.container>iframe {
-    max-width: 700px;
+    max-width: 500px;
   }
 }
 
@@ -660,7 +673,7 @@ margin-right: 10px;
 
 .contact-area>.container>.item {
   height: auto;
-   padding:30px 50px;
+  padding: 30px 50px;
   margin: 20px;
   text-align: left;
   transition: all 0.5s ease;
@@ -671,9 +684,9 @@ margin-right: 10px;
   transform: scale(1.015);
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(to left,
-  rgb(247, 205, 68),
-  rgb(247, 134, 68));
-  
+      rgb(247, 205, 68),
+      rgb(247, 134, 68));
+
 
 }
 
@@ -685,11 +698,12 @@ margin-right: 10px;
 
 .contact-area>.container>.item>.icon>a>i {
   font-size: 64px;
-  color:#333;
+  color: #333;
 }
+
 .contact-area>.container>.item>.icon>a>i:hover {
   font-size: 64px;
-  color:white;
+  color: white;
 }
 
 .contact-area>.container>.item>.service {
@@ -698,7 +712,7 @@ margin-right: 10px;
   padding: 10px 0;
 }
 
-.contact-area>.container>.item>.content *{
+.contact-area>.container>.item>.content * {
   font-size: 16px;
   font-family: "Noto Sans KR", sans-serif;
   letter-spacing: 1.5px;
@@ -708,34 +722,35 @@ margin-right: 10px;
 
 /* FOOTER AREA */
 
-.footer-area{
+.footer-area {
   height: auto;
   text-align: center;
   background-color: #333;
 
 }
 
-.footer-area *{
-color:white;
+.footer-area * {
+  color: white;
 }
 
-.footer-area>.sns>.item{
-  display:inline-block;
-  padding:10px;
-  cursor:pointer;
+.footer-area>.sns>.item {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
 
 }
 
-.footer-area>.sns>.item>a{
-  text-decoration:none;
-  color:#333;
-}
-.footer-area>.sns>.item>a>i{
-font-size: 24px;
+.footer-area>.sns>.item>a {
+  text-decoration: none;
+  color: #333;
 }
 
-.footer-area>.info >p{
+.footer-area>.sns>.item>a>i {
+  font-size: 24px;
+}
+
+.footer-area>.info>p {
   font-size: 16px;
-padding:10px 0;
+  padding: 10px 0;
 
 }
