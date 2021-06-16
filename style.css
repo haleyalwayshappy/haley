@@ -607,7 +607,7 @@ section {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 #portfolioModal>.close {
@@ -629,15 +629,17 @@ section {
 #portfolioModal>.container {
   width: 100%;
   height: auto;
+  overflow:scroll;
+  
 }
 
-#portfolioModal>.container>iframe {
+#portfolioModal>.container> img {
   width: calc(100%-40px);
   padding: 20px;
 }
 
 @media (min-width: 992px) {
-  #portfolioModal>.container>iframe {
+  #portfolioModal>.container>img {
     max-width: 500px;
   }
 }
@@ -659,10 +661,15 @@ section {
 #portfolioModal>.container>.modal-text {
   font-size: 16px;
   color: #bbb;
+
 }
 
-/* contact area */
-/* SERVICES AREA */
+#portfolioModal>.container>.modal-text img {
+width:80%;
+}
+
+  /* contact area */
+
 .contact-area {
   height: auto;
   background-color: #f9f9ff;

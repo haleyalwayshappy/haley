@@ -138,6 +138,48 @@ document.getElementById('music').addEventListener('click', filterSelection.bind(
 
 function viewPortfolio(event) {
   var polyNode = event.target;
+
+  if (polyNode.tagName.toLowerCase() == 'i') {
+    polyNode = polyNode.parentNode;
+  }
+
+  var overlayNode = polyNode;
+  var imageNode = overlayNode.nextElementSibling;
+
+  var itemNode = overlayNode.parentNode;
+  var mainNode = itemNode.nextElementSibling;
+  var subNode = mainNode.nextElementSibling;
+  var textNode = subNode.nextElementSibling;
+
+console.log(imageNode);
+
+document.getElementById('modalImage').src= imageNode.src;
+  document.getElementById('modalMain').innerHTML = mainNode.innerHTML;
+  document.getElementById('modalSub').innerHTML = subNode.innerHTML;
+  document.getElementById('modalText').innerHTML = textNode.innerHTML;
+   
+  document.getElementById('portfolioModal').style.display='block';
+}
+
+document.getElementById('modalClose').addEventListener('click',function(){
+  document.getElementById('portfolioModal').style.display='none';
+});
+
+
+var filterItems = document.getElementsByClassName('overlay');
+
+for (var i = 0; i < filterItems.length; i++) {
+  filterItems[i].addEventListener('click', viewPortfolio);
+}
+
+
+
+
+
+//모달 페이지 포트폴리오 기능 (문제가 많아서 수정해야할것도 많은데 일단 디폴트 값으로)
+/**
+function viewPortfolio(event) {
+  var polyNode = event.target;
   if (polyNode.tagName.toLowerCase() == 'i') {
     polyNode = polyNode.parentNode;
   }
@@ -165,7 +207,7 @@ $('#modalClose').on('click', function(){ //레이어 닫을때
     $('#portfolioModal').hide();
     $('#modalVideo').empty();  
 });
-
+**/
 
 // function viewPortfolio(event) {
 //   var polyNode = event.target;
@@ -197,12 +239,6 @@ $('#modalClose').on('click', function(){ //레이어 닫을때
 
 // }
 
-
-var filterItems = document.getElementsByClassName('overlay');
-
-for (var i = 0; i < filterItems.length; i++) {
-  filterItems[i].addEventListener('click', viewPortfolio);
-}
 
 
 /*NAVBAR ANCHOR */
