@@ -253,7 +253,7 @@ function moveTo(id) {
 }
 
 
-document.getElementById('navbarBrand').addEventListener('click', moveTo.bind(null, 'brand'));
+document.getElementById('navbarHome').addEventListener('click', moveTo.bind(null, 'brand'));
 document.getElementById('navbarAbout').addEventListener('click', moveTo.bind(null, 'about'));
 document.getElementById('navbarService').addEventListener('click', moveTo.bind(null, 'service'));
 document.getElementById('navbarPortfolio').addEventListener('click', moveTo.bind(null, 'portfolio'));
